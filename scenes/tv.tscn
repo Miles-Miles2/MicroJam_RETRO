@@ -1,8 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://enryp0oxeu15"]
+[gd_scene load_steps=11 format=3 uid="uid://enryp0oxeu15"]
 
 [ext_resource type="Texture2D" uid="uid://8m3deixomkf" path="res://Assets/tv.png" id="1_bgk0o"]
+[ext_resource type="Texture2D" uid="uid://c7ujrj80rmu67" path="res://Assets/textSpritesheet.png" id="2_ptw52"]
+[ext_resource type="Script" path="res://scripts/tv.gd" id="3_gs268"]
+[ext_resource type="Texture2D" uid="uid://cuwsxq3ineyfw" path="res://Assets/blinking.png" id="4_nrjgo"]
 
-[node name="tv" type="Node2D"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cne0g"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_b6vyt"]
+offsets = PackedFloat32Array(0, 0.666667, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qxws"]
+size = Vector2(3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v05l4"]
+atlas = ExtResource("4_nrjgo")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0sxv"]
+atlas = ExtResource("4_nrjgo")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cer81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v05l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v05l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0sxv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="tv" type="Node2D" groups=["interactable"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bgk0o")
+
+[node name="textParticles" type="CPUParticles2D" parent="."]
+z_index = -1
+material = SubResource("CanvasItemMaterial_cne0g")
+position = Vector2(0, 1)
+emitting = false
+amount = 1
+texture = ExtResource("2_ptw52")
+direction = Vector2(1, -1)
+spread = 30.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 16.4
+initial_velocity_max = 25.0
+color_ramp = SubResource("Gradient_b6vyt")
+anim_offset_max = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_gs268")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.5, -0.5)
+shape = SubResource("RectangleShape2D_4qxws")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(3, 0)
+sprite_frames = SubResource("SpriteFrames_cer81")
+autoplay = "default"
+frame_progress = 0.699496

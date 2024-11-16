@@ -6,12 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ieah"]
 radius = 5.0
 
-[node name="remote" type="Node2D" groups=["interactable"]]
+[node name="remote" type="Node2D" groups=["interactable", "remote"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tlt7l")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["remote"]]
 script = ExtResource("1_2dt42")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
