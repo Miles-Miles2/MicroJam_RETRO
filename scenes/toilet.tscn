@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfaa0gnwd71kl"]
+[gd_scene load_steps=6 format=3 uid="uid://bfaa0gnwd71kl"]
 
 [ext_resource type="Texture2D" uid="uid://46j7yl67ew1w" path="res://Assets/Toilet.png" id="1_nwqyr"]
 [ext_resource type="Script" path="res://scripts/toiletInteract.gd" id="2_cutn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4bn0"]
 size = Vector2(7, 8)
+
+[sub_resource type="Curve" id="Curve_x88mg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.365169, 1), 0.0, 0.0, 0, 0, Vector2(0.994382, 0.626374), -0.195605, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_dkl75"]
+colors = PackedColorArray(0.1786, 0.54661, 0.94, 1, 0.13, 0.478, 1, 0)
 
 [node name="Toilet" type="Node2D" groups=["interactable"]]
 
@@ -17,3 +24,21 @@ script = ExtResource("2_cutn8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_e4bn0")
+
+[node name="particles" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(3, -3)
+emitting = false
+amount = 32
+lifetime = 0.4
+direction = Vector2(0, -1)
+spread = 23.18
+gravity = Vector2(0, 500)
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+angular_velocity_min = -203.64
+angular_velocity_max = 392.73
+scale_amount_min = 0.6
+scale_amount_max = 0.7
+scale_amount_curve = SubResource("Curve_x88mg")
+color_ramp = SubResource("Gradient_dkl75")

@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 10000.0
 
+@export var inventory: Array = [null, null]
+var selectedIndex: int = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
@@ -20,5 +22,40 @@ func _physics_process(delta: float) -> void:
 		var intersectingObjs: Array = world.intersect_point(query)
 		
 		if len(intersectingObjs) >= 1:
-			intersectingObjs[0]["collider"].interact()
+			intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
 	
+	if Input.is_action_just_pressed("invSlot1"):
+		selectItem(0)
+	elif Input.is_action_just_pressed("invSlot2"):
+		selectItem(1)
+	elif Input.is_action_just_pressed("drop"):
+		dropItem()
+		
+func selectItem(newIndex: int):
+	print("selecting: " + str(newIndex))
+	if not selectedIndex == newIndex:
+		if not inventory[selectedIndex] == null:
+			inventory[selectedIndex].get_parent().visible = false
+			inventory[selectedIndex].equipped = false
+		if not inventory[newIndex] == null:
+			inventory[newIndex].get_parent().visible = true
+			inventory[newIndex].equipped = true
+	selectedIndex = newIndex
+
+
+func dropItem():
+	inventory[selectedIndex].equipped = false
+	inventory[selectedIndex].get_parent().reparent(get_tree().root.get_child(0))
+	inventory[selectedIndex] = null
+	
+	
+func pickUpItem(item: Node2D):
+	print(inventory)
+	if not inventory[selectedIndex] == null:
+		print("dropping")
+		dropItem()
+	item.get_parent().reparent($Backpack)
+	item.equipped = true
+	item.visible = true
+	item.get_parent().position = Vector2(0,0)
+	inventory[selectedIndex] = item
