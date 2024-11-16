@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ucvv5l8gwdsw"]
+[gd_scene load_steps=7 format=3 uid="uid://ucvv5l8gwdsw"]
 
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="1_77pej"]
 [ext_resource type="PackedScene" uid="uid://bf0ub71r6ynkt" path="res://scenes/wrench.tscn" id="1_w610b"]
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="2_sjfa4"]
 [ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="3_hcqxv"]
 [ext_resource type="PackedScene" uid="uid://duxu01lw6vnv4" path="res://scenes/remote.tscn" id="4_2ahfh"]
+[ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="6_i5yyb"]
 
 [node name="testScene" type="Node2D"]
 
@@ -23,3 +24,6 @@ lerpMult = 5.0
 
 [node name="remote" parent="." instance=ExtResource("4_2ahfh")]
 position = Vector2(15, 33)
+
+[node name="tv" parent="." instance=ExtResource("6_i5yyb")]
+position = Vector2(68, 0)

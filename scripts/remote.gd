@@ -9,3 +9,4 @@ func interact(plyr: Node2D, item: Node2D):
 	if state == "onGround":
 		state == "equipped"
 		plyr.pickUpItem(self)
+	
