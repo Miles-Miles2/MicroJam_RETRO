@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ujrj80rmu67"
-path="res://.godot/imported/textSpritesheet.png-6e8f13fc19468c007b536e7aed7e1f9b.ctex"
+uid="uid://cuwsxq3ineyfw"
+path="res://.godot/imported/blinking.png-12ea1f491152b5c0ce375ff522c36dc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textSpritesheet.png"
-dest_files=["res://.godot/imported/textSpritesheet.png-6e8f13fc19468c007b536e7aed7e1f9b.ctex"]
+source_file="res://Assets/Sprites/blinking.png"
+dest_files=["res://.godot/imported/blinking.png-12ea1f491152b5c0ce375ff522c36dc7.ctex"]
 
 [params]
 

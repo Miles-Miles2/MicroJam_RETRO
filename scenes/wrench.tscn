@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bf0ub71r6ynkt"]
 
-[ext_resource type="Texture2D" uid="uid://udodbo4rc8e6" path="res://Assets/wrench.png" id="1_bopdp"]
+[ext_resource type="Texture2D" uid="uid://udodbo4rc8e6" path="res://Assets/Sprites/wrench.png" id="1_bopdp"]
 [ext_resource type="Script" path="res://scripts/remote.gd" id="2_h6kmh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwjpd"]

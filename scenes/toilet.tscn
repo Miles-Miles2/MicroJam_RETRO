@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfaa0gnwd71kl"]
 
-[ext_resource type="Texture2D" uid="uid://46j7yl67ew1w" path="res://Assets/Toilet.png" id="1_nwqyr"]
+[ext_resource type="Texture2D" uid="uid://46j7yl67ew1w" path="res://Assets/Sprites/Toilet.png" id="1_nwqyr"]
 [ext_resource type="Script" path="res://scripts/toiletInteract.gd" id="2_cutn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4bn0"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://enryp0oxeu15"]
 
-[ext_resource type="Texture2D" uid="uid://8m3deixomkf" path="res://Assets/tv.png" id="1_bgk0o"]
-[ext_resource type="Texture2D" uid="uid://c7ujrj80rmu67" path="res://Assets/textSpritesheet.png" id="2_ptw52"]
+[ext_resource type="Texture2D" uid="uid://8m3deixomkf" path="res://Assets/Sprites/tv.png" id="1_bgk0o"]
+[ext_resource type="Texture2D" uid="uid://c7ujrj80rmu67" path="res://Assets/Sprites/textSpritesheet.png" id="2_ptw52"]
 [ext_resource type="Script" path="res://scripts/tv.gd" id="3_gs268"]
-[ext_resource type="Texture2D" uid="uid://cuwsxq3ineyfw" path="res://Assets/blinking.png" id="4_nrjgo"]
+[ext_resource type="Texture2D" uid="uid://cuwsxq3ineyfw" path="res://Assets/Sprites/blinking.png" id="4_nrjgo"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cne0g"]
 particles_animation = true
