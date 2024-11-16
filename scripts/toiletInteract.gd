@@ -3,8 +3,6 @@ extends Area2D
 var active: bool = false
 var counter: float = 0
 
-func _ready():
-	beginEvent()
 	
 		
 func _process(delta: float) -> void:
@@ -14,6 +12,7 @@ func _process(delta: float) -> void:
 		printProgress()
 		if counter >= 10:
 			active = false
+			get_parent().get_node("particles").emitting = false
 
 func printProgress():
 	var tmp: String = "Progress: ["
@@ -25,7 +24,7 @@ func printProgress():
 	tmp += "]"
 	print(tmp)
 
-func interact():
+func interact(plyr: Node2D, item: Node2D):
 	print("toilet interacted")
 	if active == true:
 		counter += 0.5
@@ -33,4 +32,5 @@ func interact():
 func beginEvent():
 	active = true
 	counter = 0
+	get_parent().get_node("particles").emitting = true
 	print("toiletClogged")
