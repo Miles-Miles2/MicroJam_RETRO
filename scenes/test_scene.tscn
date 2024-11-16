@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://ucvv5l8gwdsw"]
+[gd_scene load_steps=3 format=3 uid="uid://ucvv5l8gwdsw"]
+
+[ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="1_77pej"]
+[ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="2_sjfa4"]
 
 [node name="testScene" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_77pej")]
+
+[node name="Toilet" parent="." instance=ExtResource("2_sjfa4")]
+position = Vector2(34, 0)
