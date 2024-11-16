@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ucvv5l8gwdsw"]
+[gd_scene load_steps=4 format=3 uid="uid://ucvv5l8gwdsw"]
 
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="1_77pej"]
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="2_sjfa4"]
+[ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="3_hcqxv"]
 
 [node name="testScene" type="Node2D"]
 
@@ -9,3 +10,9 @@
 
 [node name="Toilet" parent="." instance=ExtResource("2_sjfa4")]
 position = Vector2(34, 0)
+
+[node name="Node2D" parent="." node_paths=PackedStringArray("targetObj") instance=ExtResource("3_hcqxv")]
+position = Vector2(-3, 0)
+zoom = Vector2(2, 2)
+targetObj = NodePath("../player")
+lerpMult = 5.0
