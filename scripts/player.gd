@@ -33,8 +33,10 @@ func _physics_process(delta: float) -> void:
 	#interact
 	if Input.is_action_just_pressed("interact"):
 		if len(intersectingObjs) >= 1:
-			if intersectingObjs[0]["collider"].is_in_group("interactable"):
-				intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
+			for obj in intersectingObjs:
+				if obj["collider"].is_in_group("interactable"):
+					obj["collider"].interact(self, inventory[selectedIndex])
+					break
 	
 	if Input.is_action_just_pressed("invSlot1"):
 		selectItem(0)
