@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bx10446okxkc6" path="res://Assets/Sprites/shotgun.png" id="2_ghuda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhlkc"]
-size = Vector2(8, 4)
+size = Vector2(12, 8)
 
 [node name="blicky" type="Node2D"]
 
