@@ -116,11 +116,7 @@ pattern_3 = SubResource("TileMapPattern_bdasp")
 pattern_4 = SubResource("TileMapPattern_5vt31")
 pattern_5 = SubResource("TileMapPattern_bxk8h")
 
-<<<<<<< HEAD
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckt8j"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg0xr"]
-=======
 [sub_resource type="Curve2D" id="Curve2D_4rte0"]
 _data = {
 "points": PackedVector2Array(23.6161, -1.89202, -23.6161, 1.89202, -471, -156, 4.20448, -48.9822, -4.20448, 48.9822, -559, -81, 0, -24.8064, 0, 24.8064, -563, -21)
@@ -129,7 +125,7 @@ point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq4t8"]
 size = Vector2(61, 67)
->>>>>>> 0c4e5a11dabab601cc537b313477ba04359f91a2
+
 
 [node name="map" type="Node2D"]
 
@@ -152,9 +148,7 @@ layer_0/tile_data = PackedInt32Array(-655378, 1, 3, -589842, 1, 3, -524306, 1, 3
 layer_1/name = "Front"
 layer_1/tile_data = PackedInt32Array(524273, 262145, 4, 524274, 262145, 4, 524276, 262145, 4, 524278, 262145, 4, 524279, 262145, 4, 524281, 262145, 4, 524282, 262145, 4)
 
-<<<<<<< HEAD
-[node name="player" parent="." instance=ExtResource("3_shkqn")]
-=======
+
 [node name="gamemanager" type="Node" parent="."]
 script = ExtResource("5_loysh")
 
@@ -163,7 +157,7 @@ one_shot = true
 autostart = true
 
 [node name="player" parent="." node_paths=PackedStringArray("outline1", "outline2") instance=ExtResource("3_shkqn")]
->>>>>>> 0c4e5a11dabab601cc537b313477ba04359f91a2
+
 position = Vector2(-571, 12)
 outline1 = NodePath("../CanvasLayer/Control/outline")
 outline2 = NodePath("../CanvasLayer/Control2/outline")
