@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://enryp0oxeu15"]
+[gd_scene load_steps=14 format=3 uid="uid://enryp0oxeu15"]
 
 [ext_resource type="Texture2D" uid="uid://8m3deixomkf" path="res://Assets/Sprites/tv.png" id="1_lp5i3"]
 [ext_resource type="Texture2D" uid="uid://c7ujrj80rmu67" path="res://Assets/Sprites/textSpritesheet.png" id="2_sce7u"]
 [ext_resource type="Script" path="res://scripts/tv.gd" id="3_gs268"]
 [ext_resource type="Texture2D" uid="uid://cuwsxq3ineyfw" path="res://Assets/Sprites/blinking.png" id="4_nrjgo"]
+[ext_resource type="Texture2D" uid="uid://tjqopkj2smw4" path="res://Assets/Sprites/remote.png" id="5_en5hu"]
+[ext_resource type="FontFile" uid="uid://b6r1i3o53ider" path="res://Assets/Minecraft.ttf" id="6_5g8bj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cne0g"]
 particles_animation = true
@@ -43,6 +45,10 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_boakh"]
+font = ExtResource("6_5g8bj")
+font_color = Color(1, 0, 0, 1)
+
 [node name="tv" type="Node2D" groups=["annoyance", "interactable"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -75,3 +81,18 @@ visible = false
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_cer81")
 autoplay = "default"
+
+[node name="hover" type="Sprite2D" parent="."]
+position = Vector2(7, 2)
+rotation = -0.931115
+texture = ExtResource("5_en5hu")
+
+[node name="tooFar" type="Label" parent="."]
+visible = false
+offset_left = -9.0
+offset_top = -10.0
+offset_right = 56.0
+offset_bottom = 13.0
+scale = Vector2(0.3, 0.3)
+text = "Too Far!"
+label_settings = SubResource("LabelSettings_boakh")
