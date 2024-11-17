@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4xsenacpqdg2"]
+
+[ext_resource type="Script" path="res://scripts/bird_manager.gd" id="1_rlvi8"]
+
+[sub_resource type="Curve2D" id="Curve2D_mkffe"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 138, 35, -76.5443, -60.9807, 76.5443, 60.9807, 311, 113, -3.36359, -60.5445, 3.36359, 60.5445, 436, 294, 14.5062, -31.327, -14.5062, 31.327, 417, 428)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nhdd"]
+size = Vector2(394.5, 399.5)
+
+[node name="birds" type="Node2D"]
+script = ExtResource("1_rlvi8")
+
+[node name="entry path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_mkffe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["birdLandable"]]
+position = Vector2(872.75, 402.25)
+shape = SubResource("RectangleShape2D_8nhdd")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(676, 203)
