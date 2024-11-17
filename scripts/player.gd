@@ -19,13 +19,19 @@ func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input * SPEED * delta
 	move_and_slide()
+	#hover
+	var world: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
+	var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
+	query.collide_with_areas = true
+	query.position = get_global_mouse_position()
+	var intersectingObjs: Array = world.intersect_point(query)
+	if len(intersectingObjs) >= 1:
+		var collider = intersectingObjs[0]["collider"]
+		if collider.is_in_group("interactable"):
+			if collider.has_method("hover"):
+				collider.hover()
+	#interact
 	if Input.is_action_just_pressed("interact"):
-		var world: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
-		var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
-		query.collide_with_areas = true
-		query.position = get_global_mouse_position()
-		var intersectingObjs: Array = world.intersect_point(query)
-		
 		if len(intersectingObjs) >= 1:
 			if intersectingObjs[0]["collider"].is_in_group("interactable"):
 				intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
