@@ -22,8 +22,8 @@ func _physics_process(delta: float) -> void:
 		var intersectingObjs: Array = world.intersect_point(query)
 		
 		if len(intersectingObjs) >= 1:
-			print("HAL")
-			intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
+			if intersectingObjs[0]["collider"].is_in_group("interactable"):
+				intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
 	
 	if Input.is_action_just_pressed("invSlot1"):
 		selectItem(0)
