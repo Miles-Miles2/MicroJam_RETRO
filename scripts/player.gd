@@ -47,17 +47,11 @@ func selectItem(newIndex: int):
 
 
 func dropItem():
-<<<<<<< HEAD
-	inventory[selectedIndex].equipped = false
-	inventory[selectedIndex].get_parent().reparent(get_tree().root.get_child(0))
-	inventory[selectedIndex] = null
-=======
 	if inventory[selectedIndex]:
 		inventory[selectedIndex].equipped = false
 		inventory[selectedIndex].state = "onGround"
 		inventory[selectedIndex].get_parent().reparent(get_tree().root.get_child(0))
 		inventory[selectedIndex] = null
->>>>>>> 908e2faa97e7aefd2fa3c14b4a9e211884dbded8
 	
 	
 func pickUpItem(item: Node2D):
