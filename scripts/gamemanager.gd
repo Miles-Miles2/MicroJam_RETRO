@@ -1,18 +1,19 @@
 extends Node
 
 @onready var annoyance_array = get_tree().get_nodes_in_group("annoyance")
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $"annoyance timer"
 
-var health = 3
-var RAGE: float = 0
-var rage_mult: float = 0
+var num_of_active_events: int = 0
 
-
-func _process(delta: float) -> void:
+func active_event_count():
+	return num_of_active_events
+	
+func _process(delta: float) -> void: 
 	var temp = 0
 	for i in annoyance_array:
 		if i.get_node("Area2D").active:
 			temp += 1
+
 	rage_mult = temp
 	RAGE += rage_mult * .05
 	RAGE = max(0, RAGE - 1 * (delta))
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 		if health <= 0:
 			print("YOU LOSE")
 	
+
 func is_active(x):
 	if x.get_node("Area2D").active:
 		return true
@@ -49,8 +51,8 @@ func start_event():
 		if annoyance_array[index].get_node("Area2D").active:
 			timer.start()
 		else:
-			print(index)
-			print(annoyance_array.size())
+			print(str(index) + " arr index")
+			print(str(annoyance_array.size())+ " ar size")
 			print(annoyance_array[index].get_node("Area2D").active)
 			annoyance_array[index].get_node("Area2D").beginEvent()
 			timer.start()
