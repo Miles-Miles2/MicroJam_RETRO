@@ -26,7 +26,7 @@ func printProgress():
 
 func interact(plyr: Node2D, item: Node2D):
 	print("toilet interacted")
-	if active == true:
+	if active == true and item.is_in_group("wrench"):
 		counter += 0.5
 
 func beginEvent():

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6yaltplxjmkv"]
+
+[ext_resource type="Script" path="res://scripts/bird_follow.gd" id="1_ardla"]
+[ext_resource type="Texture2D" uid="uid://dww2gllxxugyc" path="res://Assets/bird.png" id="2_gusp1"]
+
+[node name="bird" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_ardla")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_gusp1")
