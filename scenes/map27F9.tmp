@@ -136,7 +136,7 @@ position = Vector2(-571, 12)
 [node name="Toilet" parent="." groups=["annoyance"] instance=ExtResource("4_0c5x1")]
 position = Vector2(-647, 48)
 
-[node name="tv" parent="." groups=["annoyance"] instance=ExtResource("5_2r7p3")]
+[node name="tv" parent="." instance=ExtResource("5_2r7p3")]
 position = Vector2(-615, 48)
 
 [node name="remote" parent="." instance=ExtResource("6_300f1")]

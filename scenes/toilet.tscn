@@ -11,14 +11,14 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.365169, 1), 0.0, 0.0, 0, 0, Ve
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_dkl75"]
-colors = PackedColorArray(0.1786, 0.54661, 0.94, 1, 0.13, 0.478, 1, 0)
+colors = PackedColorArray(0, 0.7, 1, 1, 0.13, 0.478, 1, 0)
 
 [node name="Toilet" type="Node2D" groups=["interactable"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_huia0")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["interactable"]]
 script = ExtResource("2_cutn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -26,7 +26,6 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_e4bn0")
 
 [node name="particles" type="CPUParticles2D" parent="."]
-z_index = -1
 position = Vector2(3, -3)
 emitting = false
 amount = 32
@@ -38,7 +37,22 @@ initial_velocity_min = 75.0
 initial_velocity_max = 100.0
 angular_velocity_min = -203.64
 angular_velocity_max = 392.73
-scale_amount_min = 0.6
-scale_amount_max = 0.7
+scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_x88mg")
 color_ramp = SubResource("Gradient_dkl75")
+
+[node name="progressBackground" type="ColorRect" parent="."]
+visible = false
+offset_left = -6.0
+offset_top = 5.0
+offset_right = 6.0
+offset_bottom = 7.0
+color = Color(0.57, 0.57, 0.57, 1)
+
+[node name="progressBar" type="ColorRect" parent="."]
+visible = false
+offset_left = -6.0
+offset_top = 5.0
+offset_right = 6.0
+offset_bottom = 7.0
+color = Color(1, 0, 0, 1)

@@ -52,6 +52,7 @@ texture = ExtResource("1_lp5i3")
 z_index = -1
 material = SubResource("CanvasItemMaterial_cne0g")
 position = Vector2(0, 1)
+emitting = false
 amount = 1
 texture = ExtResource("2_sce7u")
 direction = Vector2(1, -1)
@@ -70,6 +71,7 @@ position = Vector2(3.5, -0.5)
 shape = SubResource("RectangleShape2D_4qxws")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_cer81")
 autoplay = "default"
