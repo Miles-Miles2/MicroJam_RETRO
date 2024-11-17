@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://e23aqg11vc0a" path="res://Assets/Sprites/playerSpritesheet.png" id="2_744tw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aw3ym"]
-radius = 4.0
-height = 10.0
+radius = 3.0
+height = 6.0
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_gfih1")
@@ -16,7 +16,7 @@ region_enabled = true
 region_rect = Rect2(24, 0, 8, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_aw3ym")
 
 [node name="Backpack" type="Node2D" parent="."]

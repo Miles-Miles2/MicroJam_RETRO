@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=19 format=3 uid="uid://bd8sj6gy5u2v2"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_8onjb"]
@@ -133,8 +132,10 @@ script = ExtResource("5_loysh")
 one_shot = true
 autostart = true
 
-[node name="player" parent="." instance=ExtResource("3_shkqn")]
+[node name="player" parent="." node_paths=PackedStringArray("outline1", "outline2") instance=ExtResource("3_shkqn")]
 position = Vector2(-571, 12)
+outline1 = NodePath("../CanvasLayer/Control/outline")
+outline2 = NodePath("../CanvasLayer/Control2/outline")
 
 [node name="Toilet" parent="." instance=ExtResource("4_0c5x1")]
 position = Vector2(-647, 48)
@@ -152,7 +153,6 @@ lerpMult = 5.0
 
 [node name="wrench" parent="." instance=ExtResource("8_bbra6")]
 position = Vector2(-595, -10)
-
 
 [node name="npc" parent="." instance=ExtResource("9_w108p")]
 position = Vector2(-855, -12)
@@ -178,5 +178,76 @@ position = Vector2(-824, -12)
 [node name="blicky" parent="." instance=ExtResource("10_ucp82")]
 position = Vector2(-545, 47)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -44.0
+offset_right = -10.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="outline" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 36.0
+offset_bottom = 36.0
+scale = Vector2(1.2, 1.2)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -44.0
+offset_right = 50.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="outline" type="ColorRect" parent="CanvasLayer/Control2"]
+visible = false
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 36.0
+offset_bottom = 36.0
+scale = Vector2(1.2, 1.2)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="gamemanager/Timer" to="gamemanager" method="_on_timer_timeout"]
