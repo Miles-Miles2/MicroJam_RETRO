@@ -4,10 +4,15 @@ extends CharacterBody2D
 const SPEED = 10000.0
 
 @export var inventory: Array = [null, null]
+@export var outline1: ColorRect
+@export var outline2: ColorRect
+@onready var outlines: Array = [outline1, outline2]
+
 var selectedIndex: int = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-
+func _ready() -> void:
+	outline1.visible = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -22,13 +27,17 @@ func _physics_process(delta: float) -> void:
 		var intersectingObjs: Array = world.intersect_point(query)
 		
 		if len(intersectingObjs) >= 1:
-			print("HAL")
-			intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
+			if intersectingObjs[0]["collider"].is_in_group("interactable"):
+				intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
 	
 	if Input.is_action_just_pressed("invSlot1"):
 		selectItem(0)
+		outline1.visible = true
+		outline2.visible = false
 	elif Input.is_action_just_pressed("invSlot2"):
 		selectItem(1)
+		outline1.visible = false
+		outline2.visible = true
 	elif Input.is_action_just_pressed("drop"):
 		dropItem()
 		
@@ -46,15 +55,12 @@ func selectItem(newIndex: int):
 
 func dropItem():
 
-	inventory[selectedIndex].equipped = false
-	inventory[selectedIndex].get_parent().reparent(get_tree().root.get_child(0))
-	inventory[selectedIndex] = null
-
 	if inventory[selectedIndex]:
 		inventory[selectedIndex].equipped = false
 		inventory[selectedIndex].state = "onGround"
 		inventory[selectedIndex].get_parent().reparent(get_tree().root.get_child(0))
 		inventory[selectedIndex] = null
+		outlines[selectedIndex].get_parent().get_node("TextureRect").texture = null
 	
 func pickUpItem(item: Node2D):
 	print(inventory)
@@ -66,3 +72,4 @@ func pickUpItem(item: Node2D):
 	item.visible = true
 	item.get_parent().position = Vector2(0,0)
 	inventory[selectedIndex] = item
+	outlines[selectedIndex].get_parent().get_node("TextureRect").texture = item.get_parent().get_node("Sprite2D").texture
