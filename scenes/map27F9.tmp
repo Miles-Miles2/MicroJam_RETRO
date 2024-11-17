@@ -1,11 +1,9 @@
-
 [gd_scene load_steps=17 format=3 uid="uid://bd8sj6gy5u2v2"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_8onjb"]
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="3_shkqn"]
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="4_0c5x1"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="5_2r7p3"]
-
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="5_loysh"]
 [ext_resource type="PackedScene" uid="uid://duxu01lw6vnv4" path="res://scenes/remote.tscn" id="6_300f1"]
 [ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="7_hrsw5"]
@@ -138,7 +136,7 @@ position = Vector2(-571, 12)
 [node name="Toilet" parent="." groups=["annoyance"] instance=ExtResource("4_0c5x1")]
 position = Vector2(-647, 48)
 
-[node name="tv" parent="." groups=["annoyance"] instance=ExtResource("5_2r7p3")]
+[node name="tv" parent="." instance=ExtResource("5_2r7p3")]
 position = Vector2(-615, 48)
 
 [node name="remote" parent="." instance=ExtResource("6_300f1")]

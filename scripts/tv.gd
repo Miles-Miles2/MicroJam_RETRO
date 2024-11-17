@@ -1,6 +1,6 @@
 extends Area2D
 
-var active: bool = false
+@export var active: bool = false
 
 func _ready() -> void:
 	beginEvent()
