@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4b5bl5ia5j0f"]
+[gd_scene load_steps=10 format=3 uid="uid://c4b5bl5ia5j0f"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_ri4in"]
 [ext_resource type="AudioStream" uid="uid://dws7a01lmjv5y" path="res://Assets/Audio/car-alarm-raw-43056.mp3" id="2_gx5xj"]
@@ -20,20 +20,67 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q46mh"]
-size = Vector2(11.7645, 4.68538)
+size = Vector2(4.91428, 1.53625)
+
+[sub_resource type="Animation" id="Animation_gbnwq"]
+resource_name = "move"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-300, 89), Vector2(-700, 99)]
+}
+
+[sub_resource type="Animation" id="Animation_f0kfk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pgt3"]
+_data = {
+"RESET": SubResource("Animation_f0kfk"),
+"move": SubResource("Animation_gbnwq")
+}
 
 [node name="car" type="AnimatedSprite2D" groups=["annoyance"]]
 texture_filter = 1
+position = Vector2(1, 0)
 scale = Vector2(12.6223, 12.6777)
 sprite_frames = SubResource("SpriteFrames_7dyo7")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="alarmSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_gx5xj")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_okln5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.396124, -0.236819)
+position = Vector2(0.554574, 1.49869)
 scale = Vector2(1.06401, 2.0538)
 shape = SubResource("RectangleShape2D_q46mh")
+
+[node name="bangSFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8pgt3")
+}
