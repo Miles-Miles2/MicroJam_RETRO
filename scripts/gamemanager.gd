@@ -3,6 +3,7 @@ extends Node
 @onready var annoyance_array = get_tree().get_nodes_in_group("annoyance")
 @onready var timer: Timer = $Timer
 
+var forbidden_fruit = Array()
 
 func rand_index():
 	return int(randf_range(0,annoyance_array.size()-1))
@@ -20,7 +21,6 @@ func start_event():
 				active_check += 1
 		if active_check == annoyance_array.size()-1:
 			timer.start()
-				
 		if annoyance_array[index].get_node("Area2D").active:
 			timer.start()
 		else:

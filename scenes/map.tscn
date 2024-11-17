@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bd8sj6gy5u2v2"]
+[gd_scene load_steps=13 format=3 uid="uid://bd8sj6gy5u2v2"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_8onjb"]
+[ext_resource type="PackedScene" uid="uid://c4b5bl5ia5j0f" path="res://scenes/car.tscn" id="2_e3qch"]
+[ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="3_12jd5"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="5_loysh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_pgv5m"]
@@ -127,5 +129,11 @@ script = ExtResource("5_loysh")
 [node name="Timer" type="Timer" parent="gamemanager"]
 one_shot = true
 autostart = true
+
+[node name="car" parent="." groups=["interactable"] instance=ExtResource("2_e3qch")]
+visible = false
+
+[node name="player" parent="." instance=ExtResource("3_12jd5")]
+position = Vector2(-608, 18)
 
 [connection signal="timeout" from="gamemanager/Timer" to="gamemanager" method="_on_timer_timeout"]

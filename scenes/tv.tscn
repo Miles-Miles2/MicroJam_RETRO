@@ -43,7 +43,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="tv" type="Node2D" groups=["interactable"]]
+[node name="tv" type="Node2D" groups=["annoyance", "interactable"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lp5i3")
