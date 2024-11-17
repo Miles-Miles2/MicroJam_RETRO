@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="MicroJam_RETRO"
+run/main_scene="res://scenes/map.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="MicroJam_RETRO"
+
+[global_group]
+
+annoyance=""
 
 [input]
 
