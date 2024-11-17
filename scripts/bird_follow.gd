@@ -2,8 +2,9 @@ extends PathFollow2D
 
 var active: bool = false
 var travelingOnPath: bool = false
-
 var targetPos: Vector2
+var running: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -26,8 +27,18 @@ func _process(delta: float) -> void:
 			var vel = (targetPos - position).normalized() * delta * 100
 			position += vel
 			if targetPos.distance_to(position) <= 5:
-				active = false
+				if running == false:
+					active = false
+				else:
+					queue_free()
 
 func enterApartment():
 	active = true
 	travelingOnPath = true
+	
+func shot(shotPos: Vector2):
+	if shotPos.distance_to(global_position) < 50 and running == false:
+		await get_tree().create_timer(randf_range(0.1, 0.4)).timeout
+		active = true
+		running = true
+		targetPos = Vector2(global_position.x + randf_range(-100, 100), -200)
