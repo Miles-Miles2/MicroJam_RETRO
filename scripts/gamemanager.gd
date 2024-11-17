@@ -3,6 +3,7 @@ extends Node
 @onready var annoyance_array = get_tree().get_nodes_in_group("annoyance")
 @onready var timer: Timer = $Timer
 
+var forbidden_fruit = Array()
 
 func rand_index():
 	return randi_range(0,annoyance_array.size()-1)

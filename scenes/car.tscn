@@ -1,18 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4b5bl5ia5j0f"]
+[gd_scene load_steps=12 format=3 uid="uid://c4b5bl5ia5j0f"]
 
-[ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_ri4in"]
-[ext_resource type="AudioStream" uid="uid://dws7a01lmjv5y" path="res://Assets/Audio/car-alarm-raw-43056.mp3" id="2_gx5xj"]
+[ext_resource type="Texture2D" uid="uid://dfrg32ri004h8" path="res://Assets/Sprites/10.png" id="1_08758"]
+[ext_resource type="AudioStream" uid="uid://6o7l48f5s7or" path="res://Assets/Audio/car_alarm_crunchy.mp3" id="2_ilcqm"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="3_okln5"]
+[ext_resource type="AudioStream" uid="uid://bvgchvx0n8r" path="res://Assets/Audio/arcade-game-retro-8-bit-big-shot-1-smartsound-fx-1-00-00.mp3" id="4_jyhmx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fkak0"]
-atlas = ExtResource("1_ri4in")
-region = Rect2(0, 36, 8, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxiqx"]
+atlas = ExtResource("1_08758")
+region = Rect2(45, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7dyo7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fkak0")
+"texture": SubResource("AtlasTexture_wxiqx")
 }],
 "loop": true,
 "name": &"default",
@@ -21,22 +22,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q46mh"]
 size = Vector2(4.91428, 1.53625)
-
-[sub_resource type="Animation" id="Animation_gbnwq"]
-resource_name = "move"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-300, 89), Vector2(-700, 99)]
-}
 
 [sub_resource type="Animation" id="Animation_f0kfk"]
 length = 0.001
@@ -52,31 +37,166 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("alarmSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gbnwq"]
+resource_name = "enter"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-300, 89), Vector2(-700, 89)]
+}
+
+[sub_resource type="Animation" id="Animation_w4nyh"]
+resource_name = "leave"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-700, 89), Vector2(-1200, 89)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("alarmSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8pgt3"]
 _data = {
 "RESET": SubResource("Animation_f0kfk"),
-"move": SubResource("Animation_gbnwq")
+"enter": SubResource("Animation_gbnwq"),
+"leave": SubResource("Animation_w4nyh")
 }
 
 [node name="car" type="AnimatedSprite2D" groups=["annoyance"]]
+visible = false
 texture_filter = 1
 position = Vector2(1, 0)
 scale = Vector2(12.6223, 12.6777)
 sprite_frames = SubResource("SpriteFrames_7dyo7")
+flip_h = true
 
 [node name="alarmSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_gx5xj")
+stream = ExtResource("2_ilcqm")
+volume_db = -20.0
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_okln5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.554574, 1.49869)
+position = Vector2(0.475349, 0.473272)
 scale = Vector2(1.06401, 2.0538)
 shape = SubResource("RectangleShape2D_q46mh")
+disabled = true
 
 [node name="bangSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jyhmx")
+volume_db = -20.0
 
 [node name="Timer" type="Timer" parent="."]
 
