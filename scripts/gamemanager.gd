@@ -13,17 +13,8 @@ func _process(delta: float) -> void:
 	for i in annoyance_array:
 		if i.get_node("Area2D").active:
 			temp += 1
+	num_of_active_events = temp
 
-	rage_mult = temp
-	RAGE += rage_mult * .05
-	RAGE = max(0, RAGE - 1 * (delta))
-	print(RAGE)
-	if RAGE >= 1000:
-		health -= 1
-		RAGE = 0
-		if health <= 0:
-			print("YOU LOSE")
-	
 
 func is_active(x):
 	if x.get_node("Area2D").active:

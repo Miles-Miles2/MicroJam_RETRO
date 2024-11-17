@@ -139,10 +139,8 @@ layer_0/tile_data = PackedInt32Array(-655378, 1, 3, -589842, 1, 3, -524306, 1, 3
 layer_1/name = "Front"
 layer_1/tile_data = PackedInt32Array(524273, 262145, 4, 524274, 262145, 4, 524276, 262145, 4, 524278, 262145, 4, 524279, 262145, 4, 524281, 262145, 4, 524282, 262145, 4)
 
-[node name="player" parent="." node_paths=PackedStringArray("outline1", "outline2") instance=ExtResource("3_shkqn")]
+[node name="player" parent="." instance=ExtResource("3_shkqn")]
 position = Vector2(-571, 12)
-outline1 = NodePath("../CanvasLayer/slot1/outline")
-outline2 = NodePath("../CanvasLayer/slot2/outline")
 
 [node name="Toilet" parent="." instance=ExtResource("4_0c5x1")]
 position = Vector2(-647, 48)
@@ -185,71 +183,6 @@ script = ExtResource("10_d80qs")
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
-
-[node name="slot1" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -48.0
-offset_right = -10.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="outline" type="ColorRect" parent="CanvasLayer/slot1"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 36.0
-offset_bottom = 36.0
-scale = Vector2(1.2, 1.2)
-
-[node name="bg" type="ColorRect" parent="CanvasLayer/slot1"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.244776, 0.244776, 0.244776, 1)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/slot1"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="slot2" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -48.0
-offset_right = 50.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="outline" type="ColorRect" parent="CanvasLayer/slot2"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 36.0
-offset_bottom = 36.0
-scale = Vector2(1.2, 1.2)
-
-[node name="bg" type="ColorRect" parent="CanvasLayer/slot2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.244776, 0.244776, 0.244776, 1)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/slot2"]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="timeout" from="gamemanager/annoyance timer" to="gamemanager" method="_on_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/ProgressBar/Timer" to="CanvasLayer/ProgressBar" method="_on_timer_timeout"]
