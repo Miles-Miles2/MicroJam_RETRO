@@ -2,8 +2,8 @@ extends Area2D
 
 @export var active: bool = false
 var counter: float = 0
-
-	
+var fcount: int = 0
+var hasHovered: bool = false
 		
 func _process(delta: float) -> void:
 	if counter >= 0:
@@ -16,6 +16,12 @@ func _process(delta: float) -> void:
 			get_parent().get_node("particles").emitting = false
 			parent.get_node("progressBackground").visible = false
 			parent.get_node("progressBar").visible = false
+	fcount += 1
+	if fcount > 10:
+		fcount = 0
+		if (hasHovered == false):
+			get_parent().get_node("hover").visible = false
+		hasHovered = false
 
 func printProgress():
 	var tmp: String = "Progress: ["
@@ -43,3 +49,7 @@ func beginEvent():
 	parent.get_node("progressBackground").visible = true
 	parent.get_node("progressBar").visible = true
 	print("toiletClogged")
+	
+func hover():
+	get_parent().get_node("hover").visible = true
+	hasHovered = true
