@@ -19,4 +19,3 @@ func interact(plyr: Node2D, tool: Node2D):
 				active = false
 				get_parent().get_node("AnimatedSprite2D").visible = false
 				get_parent().get_node("textParticles").emitting = false
-

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ucvv5l8gwdsw"]
+[gd_scene load_steps=9 format=3 uid="uid://ucvv5l8gwdsw"]
 
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="1_77pej"]
 [ext_resource type="PackedScene" uid="uid://bf0ub71r6ynkt" path="res://scenes/wrench.tscn" id="1_w610b"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="3_hcqxv"]
 [ext_resource type="PackedScene" uid="uid://duxu01lw6vnv4" path="res://scenes/remote.tscn" id="4_2ahfh"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="6_i5yyb"]
+[ext_resource type="PackedScene" uid="uid://cw4488j8e4fsw" path="res://scenes/blicky.tscn" id="7_rq57e"]
+[ext_resource type="PackedScene" uid="uid://bjmna781i1cac" path="res://scenes/npc.tscn" id="8_dhpwk"]
 
 [node name="testScene" type="Node2D"]
 
@@ -18,7 +20,8 @@ position = Vector2(32, 33)
 position = Vector2(34, 0)
 
 [node name="Node2D" parent="." node_paths=PackedStringArray("targetObj") instance=ExtResource("3_hcqxv")]
-position = Vector2(-3, 0)
+z_index = 5
+z_as_relative = false
 targetObj = NodePath("../player")
 lerpMult = 5.0
 
@@ -26,4 +29,10 @@ lerpMult = 5.0
 position = Vector2(15, 33)
 
 [node name="tv" parent="." instance=ExtResource("6_i5yyb")]
-position = Vector2(68, 0)
+position = Vector2(63, 0)
+
+[node name="blicky" parent="." instance=ExtResource("7_rq57e")]
+position = Vector2(51, 32)
+
+[node name="npc" parent="." instance=ExtResource("8_dhpwk")]
+position = Vector2(94, 8)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://enryp0oxeu15"]
 
-[ext_resource type="Texture2D" uid="uid://8m3deixomkf" path="res://Assets/Sprites/tv.png" id="1_bgk0o"]
-[ext_resource type="Texture2D" uid="uid://c7ujrj80rmu67" path="res://Assets/Sprites/textSpritesheet.png" id="2_ptw52"]
+[ext_resource type="Texture2D" uid="uid://8m3deixomkf" path="res://Assets/Sprites/tv.png" id="1_lp5i3"]
+[ext_resource type="Texture2D" uid="uid://c7ujrj80rmu67" path="res://Assets/Sprites/textSpritesheet.png" id="2_sce7u"]
 [ext_resource type="Script" path="res://scripts/tv.gd" id="3_gs268"]
 [ext_resource type="Texture2D" uid="uid://cuwsxq3ineyfw" path="res://Assets/Sprites/blinking.png" id="4_nrjgo"]
 
@@ -46,15 +46,14 @@ animations = [{
 [node name="tv" type="Node2D" groups=["interactable"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bgk0o")
+texture = ExtResource("1_lp5i3")
 
 [node name="textParticles" type="CPUParticles2D" parent="."]
 z_index = -1
 material = SubResource("CanvasItemMaterial_cne0g")
 position = Vector2(0, 1)
-emitting = false
 amount = 1
-texture = ExtResource("2_ptw52")
+texture = ExtResource("2_sce7u")
 direction = Vector2(1, -1)
 spread = 30.0
 gravity = Vector2(0, 0)
@@ -63,7 +62,7 @@ initial_velocity_max = 25.0
 color_ramp = SubResource("Gradient_b6vyt")
 anim_offset_max = 1.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["interactable"]]
 script = ExtResource("3_gs268")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -71,8 +70,6 @@ position = Vector2(3.5, -0.5)
 shape = SubResource("RectangleShape2D_4qxws")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_cer81")
 autoplay = "default"
-frame_progress = 0.966071

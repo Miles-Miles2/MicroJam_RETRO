@@ -22,7 +22,8 @@ func _physics_process(delta: float) -> void:
 		var intersectingObjs: Array = world.intersect_point(query)
 		
 		if len(intersectingObjs) >= 1:
-			intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
+			if (intersectingObjs[0]["collider"].is_in_group("interactable")):
+				intersectingObjs[0]["collider"].interact(self, inventory[selectedIndex])
 	
 	if Input.is_action_just_pressed("invSlot1"):
 		selectItem(0)
@@ -37,15 +38,18 @@ func selectItem(newIndex: int):
 		if not inventory[selectedIndex] == null:
 			inventory[selectedIndex].get_parent().visible = false
 			inventory[selectedIndex].equipped = false
+			inventory[selectedIndex].state = "backpack"
 		if not inventory[newIndex] == null:
 			inventory[newIndex].get_parent().visible = true
 			inventory[newIndex].equipped = true
+			inventory[newIndex].state = "equipped"
 	selectedIndex = newIndex
 
 
 func dropItem():
 	if inventory[selectedIndex]:
 		inventory[selectedIndex].equipped = false
+		inventory[selectedIndex].state = "onGround"
 		inventory[selectedIndex].get_parent().reparent(get_tree().root.get_child(0))
 		inventory[selectedIndex] = null
 	
@@ -57,6 +61,7 @@ func pickUpItem(item: Node2D):
 		dropItem()
 	item.get_parent().reparent($Backpack)
 	item.equipped = true
+	item.state = "equipped"
 	item.visible = true
 	item.get_parent().position = Vector2(0,0)
 	inventory[selectedIndex] = item
