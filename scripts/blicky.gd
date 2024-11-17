@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 			get_tree().root.get_child(0).add_child(instance)
 			instance.global_position = global_position
 			instance.rotation = (global_position.angle_to_point(get_global_mouse_position())) + randf_range(-0.07, 0.07)
+		get_tree().call_group("bird", "shot", global_position)
 		await get_tree().create_timer(1).timeout
 		canShoot = true
 		

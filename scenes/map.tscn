@@ -212,7 +212,6 @@ offset_top = -4.0
 offset_right = 36.0
 offset_bottom = 36.0
 scale = Vector2(1.2, 1.2)
-color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -247,7 +246,6 @@ offset_top = -4.0
 offset_right = 36.0
 offset_bottom = 36.0
 scale = Vector2(1.2, 1.2)
-color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control2"]
 layout_mode = 0
@@ -263,8 +261,8 @@ offset_bottom = 40.0
 [node name="birds" parent="." groups=["annoyance"] instance=ExtResource("11_71vqq")]
 
 [node name="entry path" type="Path2D" parent="birds"]
-position = Vector2(15.3555, 0)
-scale = Vector2(1.0326, 1)
+position = Vector2(0, -1.43051e-06)
+scale = Vector2(0.999993, 0.955556)
 curve = SubResource("Curve2D_4rte0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="birds" groups=["birdLandable"]]

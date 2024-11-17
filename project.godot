@@ -24,6 +24,7 @@ project/assembly_name="MicroJam_RETRO"
 annoyance=""
 interactable=""
 killable="for npcs"
+bird="ca caw"
 
 [input]
 

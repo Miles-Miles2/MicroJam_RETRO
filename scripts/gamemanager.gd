@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 			temp += 1
 	rage_mult = temp
 	RAGE += rage_mult * .05
+	RAGE = max(0, RAGE - 1 * (delta))
 	print(RAGE)
 	if RAGE >= 1000:
 		health -= 1
