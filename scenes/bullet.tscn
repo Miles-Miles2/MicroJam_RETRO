@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbsxtp7unrxly"]
+[gd_scene load_steps=5 format=3 uid="uid://c4frag2kk45bp"]
 
 [ext_resource type="Texture2D" uid="uid://5rqh7eedci4a" path="res://Assets/Sprites/bullet.png" id="1_heke6"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="2_debmy"]
-[ext_resource type="PackedScene" uid="uid://b11fc86m7yxa7" path="res://scenes/trail.tscn" id="3_ck848"]
+[ext_resource type="PackedScene" path="res://scenes/trail.tscn" id="3_ck848"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwsv5"]
 size = Vector2(6, 2)
