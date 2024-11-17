@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjmna781i1cac"]
+
+[ext_resource type="Texture2D" uid="uid://e23aqg11vc0a" path="res://Assets/Sprites/playerSpritesheet.png" id="1_knq2k"]
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_prbuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrxc5"]
+size = Vector2(8, 16)
+
+[sub_resource type="Curve" id="Curve_83l3i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qtiph"]
+colors = PackedColorArray(0.39, 0.0507, 0.0507, 1, 0.71, 0.1775, 0.1775, 1)
+
+[node name="npc" type="Node2D"]
+script = ExtResource("1_prbuc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_knq2k")
+region_enabled = true
+region_rect = Rect2(24, 0, 8, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["killable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_vrxc5")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+damping_min = 57.566
+damping_max = 57.566
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_83l3i")
+color_initial_ramp = SubResource("Gradient_qtiph")
+hue_variation_min = -0.44
+hue_variation_max = 0.38
