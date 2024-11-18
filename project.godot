@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="MicroJam_RETRO"
-run/main_scene="res://scenes/map.tscn"
+run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalProgressBar="*res://scripts/progress_bar.gd"
+Music="*res://scenes/music.tscn"
+Gameover="*res://scenes/gameover.tscn"
 
 [display]
 
