@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwl784njrenpb"]
+[gd_scene load_steps=12 format=3 uid="uid://rgbtarjjd35p"]
 
 [ext_resource type="Texture2D" uid="uid://bhdk5sawqilkj" path="res://Assets/Sprites/jehovah.png" id="1_f0hat"]
 [ext_resource type="Script" path="res://scripts/jehovas_witness.gd" id="2_k4o5y"]

@@ -2,7 +2,11 @@ extends Node
 
 @onready var annoyance_array = get_tree().get_nodes_in_group("annoyance")
 @onready var timer: Timer = $"annoyance timer"
+@onready var total_time: Timer = $total_time
 
+var minutes = 0
+var seconds = 0
+var total_seconds = 0
 var num_of_active_events: int = 0
 
 func active_event_count():
@@ -15,7 +19,6 @@ func _process(delta: float) -> void:
 			temp += 1
 	num_of_active_events = temp
 
-
 func is_active(x):
 	if x.get_node("Area2D").active:
 		return true
@@ -24,6 +27,7 @@ func is_active(x):
 
 func rand_index():
 	return randi_range(0,annoyance_array.size()-1)
+
 
 func _on_timer_timeout() -> void:
 	start_event()
@@ -47,3 +51,6 @@ func start_event():
 			print(annoyance_array[index].get_node("Area2D").active)
 			annoyance_array[index].get_node("Area2D").beginEvent()
 			timer.start()
+
+func _on_total_time_timeout() -> void:
+	pass # Replace with function body.

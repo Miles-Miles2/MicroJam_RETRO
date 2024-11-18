@@ -3,17 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_g4ypl"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="2_jxxrv"]
 [ext_resource type="Texture2D" uid="uid://bkgs1kjd7k54e" path="res://Assets/Sprites/woodfloor.png" id="2_krwfc"]
-[ext_resource type="PackedScene" uid="uid://b0bfrarna2ggx" path="res://scenes/window.tscn" id="3_0yggn"]
+[ext_resource type="PackedScene" path="res://scenes/window.tscn" id="3_0yggn"]
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="3_08c15"]
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="4_kakyk"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="5_xg3p1"]
 [ext_resource type="PackedScene" uid="uid://duxu01lw6vnv4" path="res://scenes/remote.tscn" id="6_kd1a7"]
 [ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="7_h2a6s"]
 [ext_resource type="PackedScene" uid="uid://bf0ub71r6ynkt" path="res://scenes/wrench.tscn" id="8_cl3l5"]
-[ext_resource type="PackedScene" uid="uid://dwl784njrenpb" path="res://scenes/jehovas_witness.tscn" id="9_higj0"]
+[ext_resource type="PackedScene" uid="uid://rgbtarjjd35p" path="res://scenes/jehovas_witness.tscn" id="9_higj0"]
 [ext_resource type="PackedScene" uid="uid://c4b5bl5ia5j0f" path="res://scenes/car.tscn" id="9_td1wk"]
 [ext_resource type="Script" path="res://scripts/progress_bar.gd" id="10_e5xp0"]
-[ext_resource type="PackedScene" uid="uid://dcv1mp7ipkkj0" path="res://scenes/thermometer.tscn" id="12_3qvs7"]
+[ext_resource type="PackedScene" path="res://scenes/thermometer.tscn" id="12_3qvs7"]
 [ext_resource type="PackedScene" uid="uid://c1mejdhc8b8gi" path="res://scenes/party.tscn" id="13_8c664"]
 [ext_resource type="PackedScene" uid="uid://cw4488j8e4fsw" path="res://scenes/blicky.tscn" id="14_mytjl"]
 [ext_resource type="Texture2D" uid="uid://bcjvvdf057qmn" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170151.png" id="15_ji6gc"]
@@ -181,9 +181,6 @@ script = ExtResource("2_jxxrv")
 
 [node name="annoyance timer" type="Timer" parent="gamemanager"]
 one_shot = true
-autostart = true
-
-[node name="Timer" type="Timer" parent="gamemanager"]
 autostart = true
 
 [node name="TileMap" type="TileMap" parent="."]

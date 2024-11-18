@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbjoewoteoe8i"]
+
+[ext_resource type="Texture2D" uid="uid://b5yoovnkld8ri" path="res://Assets/Sprites/No words_0_0.png" id="1_5e4a2"]
+[ext_resource type="FontFile" uid="uid://b6r1i3o53ider" path="res://Assets/Minecraft.ttf" id="2_udgy2"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="3_sveje"]
+[ext_resource type="AudioStream" uid="uid://bvgchvx0n8r" path="res://Assets/Audio/arcade-game-retro-8-bit-big-shot-1-smartsound-fx-1-00-00.mp3" id="4_s4ike"]
+[ext_resource type="Script" path="res://label.gd" id="5_yjshp"]
+
+[node name="gameover" type="Node2D"]
+
+[node name="BackGround00" type="Sprite2D" parent="."]
+position = Vector2(2, 4)
+scale = Vector2(9.12426, 8.84426)
+texture = ExtResource("1_5e4a2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(-3.16621, 1.64241)
+zoom = Vector2(2, 1.2)
+limit_left = -310
+limit_top = -300
+limit_right = 304
+limit_bottom = 300
+
+[node name="retry" type="Button" parent="."]
+offset_left = -253.0
+offset_top = 172.0
+offset_right = -186.0
+offset_bottom = 196.0
+scale = Vector2(3.42015, 3.42015)
+theme_override_fonts/font = ExtResource("2_udgy2")
+text = "RETRY"
+script = ExtResource("3_sveje")
+nextscene = "res://scenes/map.tscn"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="retry"]
+stream = ExtResource("4_s4ike")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="retry"]
+wait_time = 0.5
+
+[node name="retry2" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 172.0
+offset_right = 97.0
+offset_bottom = 196.0
+scale = Vector2(3.42015, 3.42015)
+theme_override_fonts/font = ExtResource("2_udgy2")
+text = "TITLE"
+script = ExtResource("3_sveje")
+nextscene = "res://scenes/map.tscn"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="retry2"]
+stream = ExtResource("4_s4ike")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="retry2"]
+wait_time = 0.5
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("5_yjshp")
+
+[connection signal="pressed" from="retry" to="retry" method="_on_pressed"]
+[connection signal="timeout" from="retry/Timer" to="retry" method="_on_timer_timeout"]
+[connection signal="pressed" from="retry2" to="retry2" method="_on_pressed"]
+[connection signal="timeout" from="retry2/Timer" to="retry2" method="_on_timer_timeout"]

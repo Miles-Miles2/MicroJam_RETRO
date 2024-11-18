@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="4_0c5x1"]
 [ext_resource type="Script" path="res://scripts/label.gd" id="4_fh6o7"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="5_2r7p3"]
-[ext_resource type="PackedScene" uid="uid://dwl784njrenpb" path="res://scenes/jehovas_witness.tscn" id="5_8bp7b"]
+[ext_resource type="PackedScene" uid="uid://rgbtarjjd35p" path="res://scenes/jehovas_witness.tscn" id="5_8bp7b"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="5_loysh"]
 [ext_resource type="PackedScene" uid="uid://duxu01lw6vnv4" path="res://scenes/remote.tscn" id="6_300f1"]
 [ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="7_hrsw5"]
@@ -134,7 +134,7 @@ script = ExtResource("5_loysh")
 one_shot = true
 autostart = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="total_time" type="Timer" parent="gamemanager"]
 autostart = true
 
 [node name="player" parent="." node_paths=PackedStringArray("outline1", "outline2") instance=ExtResource("3_shkqn")]
@@ -168,15 +168,6 @@ scale = Vector2(12.582, 13.1653)
 
 [node name="Jehova" parent="Annoyances" instance=ExtResource("5_8bp7b")]
 position = Vector2(-579, 62)
-
-[node name="Label" type="Label" parent="Annoyances/Jehova"]
-z_index = 3
-offset_left = -24.9483
-offset_top = -13.1974
-offset_right = 15.0517
-offset_bottom = 40.8026
-scale = Vector2(0.584062, 0.584062)
-theme_override_fonts/font = ExtResource("3_kwuta")
 
 [node name="Toilet" parent="Annoyances" instance=ExtResource("4_0c5x1")]
 position = Vector2(-647, 48)
@@ -242,6 +233,7 @@ step = 0.001
 script = ExtResource("10_d80qs")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
+autostart = true
 
 [node name="slot1" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -332,4 +324,5 @@ layer_1/name = "Front"
 layer_1/tile_data = PackedInt32Array(524273, 262145, 4, 524274, 262145, 4, 524276, 262145, 4, 524278, 262145, 4, 524279, 262145, 4, 524281, 262145, 4, 524282, 262145, 4)
 
 [connection signal="timeout" from="gamemanager/annoyance timer" to="gamemanager" method="_on_timer_timeout"]
+[connection signal="timeout" from="gamemanager/total_time" to="gamemanager" method="_on_total_time_timeout"]
 [connection signal="timeout" from="CanvasLayer/ProgressBar/Timer" to="CanvasLayer/ProgressBar" method="_on_timer_timeout"]
