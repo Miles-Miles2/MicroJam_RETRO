@@ -1,8 +1,8 @@
 extends Label
 
 @onready var bar: ProgressBar = $CanvasLayer/ProgressBar
-@onready var min = get_node("/root/GlobalProgressBar").get_minutes()
-@onready var sec = get_node("/root/GlobalProgressBar").get_seconds()
+@onready var min = int(GlobalTimer.time / 60)
+@onready var sec = int(GlobalTimer.time) % 60
 @onready var scream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 

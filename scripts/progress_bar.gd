@@ -10,7 +10,7 @@ extends ProgressBar
 @onready var tex3: TextureRect = $"../TextureRect3"
 @onready var tex4: TextureRect = $"../TextureRect4"
 
-var  total_seconds: int = 0
+@export var  total_seconds: int = 0
 @export var minutes: int
 @export var seconds: int
 
@@ -25,6 +25,7 @@ func end_game():
 	minutes = int(total_seconds/60)
 	seconds = int(total_seconds % 60)
 	print("YOU LASTED " + str(minutes) + " MINUTE(S) AND " + str(seconds) + " SECONDS!")
+	GlobalTimer.disableTimer()
 	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
 
 
