@@ -103,7 +103,7 @@ _data = {
 "idle": SubResource("Animation_48rrv")
 }
 
-[node name="npc" type="Node2D"]
+[node name="npc" type="Node2D" groups=["npc"]]
 script = ExtResource("1_prbuc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

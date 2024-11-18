@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1mejdhc8b8gi"]
+
+[ext_resource type="Script" path="res://scripts/partyManager.gd" id="1_upcve"]
+
+[node name="Party" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_upcve")
