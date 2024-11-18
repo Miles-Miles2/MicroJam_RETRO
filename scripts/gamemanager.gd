@@ -6,7 +6,7 @@ extends Node
 
 var minutes = 0
 var seconds = 0
-var total_seconds = 0
+@export var total_seconds = 0
 var num_of_active_events: int = 0
 
 func active_event_count():
