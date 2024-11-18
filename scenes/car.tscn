@@ -210,7 +210,7 @@ _data = {
 "leave": SubResource("Animation_w4nyh")
 }
 
-[node name="car" type="AnimatedSprite2D" groups=["annoyance"]]
+[node name="car" type="AnimatedSprite2D" groups=["annoyance", "interactable"]]
 visible = false
 texture_filter = 1
 position = Vector2(1, 0)
@@ -223,7 +223,7 @@ stream = ExtResource("2_ilcqm")
 volume_db = -20.0
 bus = &"SFX"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["interactable"]]
 script = ExtResource("3_okln5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

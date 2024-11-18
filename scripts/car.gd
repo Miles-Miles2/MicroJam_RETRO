@@ -25,7 +25,7 @@ func beginEvent():
 	alarm.play()
 	
 func interact(plyr: Node2D, item: Node2D):
-	if overlaps_body(get_parent().get_parent().get_node("player")):
+	if overlaps_body(get_parent().get_parent().get_parent().get_node("player")):
 		print("YIPEE")
 		if Input.is_action_just_pressed("interact"):
 			bang.play()
