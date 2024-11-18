@@ -1,18 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://rgbtarjjd35p"]
+[gd_scene load_steps=12 format=3 uid="uid://dwl784njrenpb"]
 
 [ext_resource type="Texture2D" uid="uid://bhdk5sawqilkj" path="res://Assets/Sprites/jehovah.png" id="1_f0hat"]
 [ext_resource type="Script" path="res://scripts/jehovas_witness.gd" id="2_k4o5y"]
 [ext_resource type="AudioStream" uid="uid://bktdsckos7emi" path="res://Assets/Audio/animalese.mp3" id="3_2ldkx"]
+[ext_resource type="FontFile" uid="uid://b6r1i3o53ider" path="res://Assets/Minecraft.ttf" id="3_x75is"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yib5"]
 size = Vector2(20, 53)
 
+[sub_resource type="LabelSettings" id="LabelSettings_hohyo"]
+font = ExtResource("3_x75is")
+font_color = Color(1, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml0ie"]
 size = Vector2(20, 15)
 
-[sub_resource type="Animation" id="Animation_gx45v"]
-resource_name = "appear"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_l1cjb"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,8 +54,9 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_l1cjb"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_gx45v"]
+resource_name = "appear"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -162,6 +167,16 @@ one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
 stream = ExtResource("3_2ldkx")
+
+[node name="tooFar" type="Label" parent="Area2D"]
+visible = false
+offset_left = -13.0
+offset_top = 9.0
+offset_right = 51.0
+offset_bottom = 32.0
+scale = Vector2(0.4, 0.4)
+text = "Too far!"
+label_settings = SubResource("LabelSettings_hohyo")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
