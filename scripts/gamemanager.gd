@@ -36,13 +36,12 @@ func start_event():
 	timer.stop()
 	
 	if annoyance_array.size() > 0:
-		for i in annoyance_array:
-			print (i)
 
 		var index = rand_index()
 		if annoyance_array.all(is_active):
 			print("all active")
 			timer.start()
+			return
 		if annoyance_array[index].get_node("Area2D").active:
 			timer.start()
 		else:

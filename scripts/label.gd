@@ -5,8 +5,8 @@ extends Label
 
 func _process(delta: float) -> void:
 	if car.get_node("Area2D").overlappingPlayer():
-		text = ("SPAM E WHILE HOVERING\nOVER CAR WITH MOUSE")
+		text = ("Spam \"E\" send car away")
 	elif jehova.get_node("Area2D").overlappingPlayer():
-		text = ("PRESS E WHILE HOVERING\nOVER MAN WITH MOUSE")
+		text = ("\"E\" to send solicitor away")
 	else:
 		text = ("")
