@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1mejdhc8b8gi"]
+[gd_scene load_steps=3 format=3 uid="uid://c1mejdhc8b8gi"]
 
 [ext_resource type="Script" path="res://scripts/partyManager.gd" id="1_upcve"]
+[ext_resource type="AudioStream" uid="uid://cnb6w66urqrb4" path="res://Assets/Audio/timeToParty.mp3" id="2_8wf03"]
 
 [node name="Party" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_upcve")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource("2_8wf03")
+bus = &"SFX"
