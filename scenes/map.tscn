@@ -326,6 +326,7 @@ step = 0.001
 script = ExtResource("10_d80qs")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
+autostart = true
 
 [node name="slot1" type="Control" parent="CanvasLayer"]
 layout_mode = 3
