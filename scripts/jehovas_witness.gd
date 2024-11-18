@@ -6,6 +6,7 @@ extends Area2D
 @onready var player: CharacterBody2D = $player
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @onready var talking: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var label: Label = $Annoyances/Jehova/Label
 
 @export var active = false
 
