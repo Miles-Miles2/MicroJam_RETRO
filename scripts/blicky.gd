@@ -17,6 +17,7 @@ func interact(plyr: Node2D, item: Node2D):
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot") and equipped and canShoot == true:
 		canShoot = false
+		get_parent().get_node("AudioStreamPlayer2D").playing = true
 		for i in range(5):
 			var instance = bulletScene.instantiate()
 			get_tree().root.get_child(0).add_child(instance)
