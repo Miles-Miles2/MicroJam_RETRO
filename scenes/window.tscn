@@ -32,7 +32,7 @@ size = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_bvtwc")
 animation = &"closed"
 
-[node name="Area2D" type="Area2D" parent="." groups=["interactable"]]
+[node name="Area2D" type="Area2D" parent="." groups=["interactable", "window"]]
 script = ExtResource("3_be57b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

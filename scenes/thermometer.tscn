@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcv1mp7ipkkj0"]
+
+[ext_resource type="Script" path="res://scripts/thermometer.gd" id="1_wl4e3"]
+[ext_resource type="Texture2D" uid="uid://li475p24hhch" path="res://Assets/Sprites/thermometer.png" id="2_mbb07"]
+
+[node name="thermometer" type="Node2D" groups=["annoyance"]]
+position = Vector2(13, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mbb07")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 3.0
+offset_bottom = 19.0
+rotation = 3.14159
+color = Color(0, 0, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_wl4e3")
