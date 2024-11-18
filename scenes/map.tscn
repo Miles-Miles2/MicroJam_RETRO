@@ -1,8 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bd8sj6gy5u2v2"]
+[gd_scene load_steps=24 format=3 uid="uid://bd8sj6gy5u2v2"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_8onjb"]
+[ext_resource type="FontFile" uid="uid://b6r1i3o53ider" path="res://Assets/Minecraft.ttf" id="3_kwuta"]
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="3_shkqn"]
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="4_0c5x1"]
+[ext_resource type="Script" path="res://scenes/label.gd" id="4_fh6o7"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="5_2r7p3"]
 [ext_resource type="PackedScene" uid="uid://rgbtarjjd35p" path="res://scenes/jehovas_witness.tscn" id="5_8bp7b"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="5_loysh"]
@@ -121,12 +123,6 @@ pattern_5 = SubResource("TileMapPattern_bxk8h")
 
 [node name="map" type="Node2D"]
 
-[node name="player" parent="." node_paths=PackedStringArray("outline1", "outline2") instance=ExtResource("3_shkqn")]
-z_index = 2
-position = Vector2(-580, 25)
-outline1 = NodePath("../CanvasLayer/slot1/outline")
-outline2 = NodePath("../CanvasLayer/slot2/outline")
-
 [node name="gamemanager" type="Node" parent="."]
 script = ExtResource("5_loysh")
 
@@ -136,6 +132,24 @@ autostart = true
 
 [node name="Timer" type="Timer" parent="gamemanager"]
 autostart = true
+
+[node name="player" parent="." node_paths=PackedStringArray("outline1", "outline2") instance=ExtResource("3_shkqn")]
+z_index = 2
+position = Vector2(-580, 25)
+outline1 = NodePath("../CanvasLayer/slot1/outline")
+outline2 = NodePath("../CanvasLayer/slot2/outline")
+
+[node name="Label" type="Label" parent="player"]
+offset_left = 4.0
+offset_top = -11.0
+offset_right = 107.0
+offset_bottom = 24.0
+scale = Vector2(0.304607, 0.304607)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_kwuta")
+text = "SPAM E
+"
+script = ExtResource("4_fh6o7")
 
 [node name="items" type="Node" parent="."]
 
@@ -148,6 +162,7 @@ position = Vector2(-595, -10)
 [node name="Annoyances" type="Node" parent="."]
 
 [node name="car" parent="Annoyances" instance=ExtResource("9_eq6dh")]
+scale = Vector2(12.582, 13.1653)
 
 [node name="Jehova" parent="Annoyances" instance=ExtResource("5_8bp7b")]
 position = Vector2(-579, 62)

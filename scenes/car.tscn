@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4b5bl5ia5j0f"]
+[gd_scene load_steps=14 format=3 uid="uid://c4b5bl5ia5j0f"]
 
 [ext_resource type="Texture2D" uid="uid://dfrg32ri004h8" path="res://Assets/Sprites/10.png" id="1_08758"]
 [ext_resource type="AudioStream" uid="uid://6o7l48f5s7or" path="res://Assets/Audio/car/car_alarm_crunchy.mp3" id="2_ilcqm"]
@@ -20,6 +20,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4pge"]
+size = Vector2(4.11969, 2.05084)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q46mh"]
 size = Vector2(4.91428, 1.53625)
@@ -217,6 +220,13 @@ position = Vector2(1, 0)
 scale = Vector2(12.6223, 12.6777)
 sprite_frames = SubResource("SpriteFrames_7dyo7")
 flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1.11362, 1.23973)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.497991, 0.381755)
+shape = SubResource("RectangleShape2D_q4pge")
 
 [node name="alarmSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ilcqm")

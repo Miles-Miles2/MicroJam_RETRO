@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_g4ypl"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="2_jxxrv"]
 [ext_resource type="Texture2D" uid="uid://bkgs1kjd7k54e" path="res://Assets/Sprites/woodfloor.png" id="2_krwfc"]
-[ext_resource type="PackedScene" uid="uid://b0bfrarna2ggx" path="res://scenes/window.tscn" id="3_0yggn"]
+[ext_resource type="PackedScene" path="res://scenes/window.tscn" id="3_0yggn"]
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="3_08c15"]
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="4_kakyk"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="5_xg3p1"]

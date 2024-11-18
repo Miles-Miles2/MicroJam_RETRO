@@ -9,6 +9,9 @@ extends Area2D
 
 @export var active = false
 
+func overlappingPlayer():
+	return overlaps_body(get_parent().get_parent().get_parent().get_node("player"))
+
 func beginEvent():
 	active = true
 	animation_player.play("appear")

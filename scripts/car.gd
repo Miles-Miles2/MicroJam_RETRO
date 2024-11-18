@@ -12,6 +12,9 @@ extends Area2D
 
 var health = 10
 
+func overlappingPlayer():
+	return overlaps_body(get_parent().get_parent().get_parent().get_node("player"))
+	
 func disable():
 	animation.play("leave")
 
