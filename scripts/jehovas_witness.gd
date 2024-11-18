@@ -14,12 +14,16 @@ func beginEvent():
 	animation_player.play("appear")
 	
 func interact(plyr: Node2D, item: Node2D):
-	if overlaps_body(get_parent().get_parent().get_parent().get_node("player")):
-		if Input.is_action_just_pressed("interact"):
-			print("hi")
-			talking.play()
-			timer.start()
-			get_parent().get_parent().get_parent().get_node("player").set_physics_process(false)
+	if plyr.global_position.distance_to(global_position) < 20:
+		print("hi")
+		talking.play()
+		timer.start()
+		plyr.set_physics_process(false)
+	else:
+		$tooFar.visible = true
+		await get_tree().create_timer(1).timeout
+		$tooFar.visible = false
+		
 
 func _on_timer_timeout() -> void:
 	active = false
