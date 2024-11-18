@@ -212,6 +212,7 @@ position = Vector2(-595, -10)
 [node name="car" parent="Annoyances" instance=ExtResource("9_td1wk")]
 
 [node name="Jehova" parent="Annoyances" instance=ExtResource("9_higj0")]
+visible = false
 position = Vector2(-579, 62)
 
 [node name="Toilet" parent="Annoyances" instance=ExtResource("4_kakyk")]

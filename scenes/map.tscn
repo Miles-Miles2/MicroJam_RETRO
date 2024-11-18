@@ -405,6 +405,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" parent="." node_paths=PackedStringArray("targetObj") instance=ExtResource("7_hrsw5")]
 position = Vector2(-697, -4)
+limit_left = -980
+limit_top = -142
+limit_right = -410
+limit_bottom = 120
 targetObj = NodePath("../player")
 lerpMult = 5.0
 
