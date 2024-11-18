@@ -17,11 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://cryx08x36tlhs" path="res://scenes/bird_controller.tscn" id="11_ywg0e"]
 [ext_resource type="Texture2D" uid="uid://b2hyybnkock5j" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170310.png" id="12_4qw1x"]
 [ext_resource type="PackedScene" uid="uid://c1mejdhc8b8gi" path="res://scenes/party.tscn" id="12_f31fd"]
-[ext_resource type="PackedScene" path="res://scenes/thermometer.tscn" id="13_eibsi"]
+[ext_resource type="PackedScene" uid="uid://dxka6ev4roges" path="res://scenes/thermometer.tscn" id="13_eibsi"]
 [ext_resource type="Texture2D" uid="uid://uys8q0v8asd3" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170322.png" id="13_xtmkq"]
 [ext_resource type="Texture2D" uid="uid://cudetpqn1wr2j" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170330.png" id="14_l4k0b"]
 [ext_resource type="Texture2D" uid="uid://bkgs1kjd7k54e" path="res://Assets/Sprites/woodfloor.png" id="17_6d2dg"]
-[ext_resource type="PackedScene" path="res://scenes/window.tscn" id="19_xe8h2"]
+[ext_resource type="PackedScene" uid="uid://beskjohbitixe" path="res://scenes/window.tscn" id="19_xe8h2"]
 [ext_resource type="PackedScene" uid="uid://cw4488j8e4fsw" path="res://scenes/blicky.tscn" id="21_c0j5p"]
 
 [sub_resource type="Curve2D" id="Curve2D_5drsb"]

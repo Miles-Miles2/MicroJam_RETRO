@@ -4,6 +4,7 @@ var active: bool = false
 var travelingOnPath: bool = false
 var targetPos: Vector2
 var running: bool = false
+@onready var tweetSFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,11 +29,13 @@ func _process(delta: float) -> void:
 			position += vel
 			if targetPos.distance_to(position) <= 5:
 				if running == false:
+					tweetSFX.stop()
 					active = false
 				else:
 					queue_free()
 
 func enterApartment():
+	tweetSFX.play()
 	active = true
 	travelingOnPath = true
 	

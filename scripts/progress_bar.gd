@@ -30,11 +30,8 @@ func end_game():
 
 func _on_timer_timeout() -> void:
 	total_seconds += 1
-	print(value)
-	if gamemanager.num_of_active_events <= 1:
-		value -= 2
-	else:
-		value += gamemanager.num_of_active_events*6
+	
+	value += gamemanager.num_of_active_events*6
 	if value >= 100:
 		end_game()
 	if 90 < value && value <= 100:

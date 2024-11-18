@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcv1mp7ipkkj0"]
+[gd_scene load_steps=3 format=3 uid="uid://dxka6ev4roges"]
 
 [ext_resource type="Script" path="res://scripts/thermometer.gd" id="1_wl4e3"]
 [ext_resource type="Texture2D" uid="uid://li475p24hhch" path="res://Assets/Sprites/thermometer.png" id="2_mbb07"]

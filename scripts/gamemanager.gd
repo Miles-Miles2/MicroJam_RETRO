@@ -30,6 +30,7 @@ func rand_index():
 
 
 func _on_timer_timeout() -> void:
+	print(num_of_active_events)
 	start_event()
 
 func start_event():
@@ -50,6 +51,3 @@ func start_event():
 			print(annoyance_array[index].get_node("Area2D").active)
 			annoyance_array[index].get_node("Area2D").beginEvent()
 			timer.start()
-
-func _on_total_time_timeout() -> void:
-	pass # Replace with function body.
