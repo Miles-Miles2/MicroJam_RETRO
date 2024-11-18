@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bd8sj6gy5u2v2"]
+[gd_scene load_steps=28 format=3 uid="uid://bd8sj6gy5u2v2"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lmt2nhp1r7" path="res://Assets/Sprites/1.png" id="1_8onjb"]
 [ext_resource type="FontFile" uid="uid://b6r1i3o53ider" path="res://Assets/Minecraft.ttf" id="3_kwuta"]
@@ -6,13 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="4_0c5x1"]
 [ext_resource type="Script" path="res://scenes/label.gd" id="4_fh6o7"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="5_2r7p3"]
-[ext_resource type="PackedScene" uid="uid://dwl784njrenpb" path="res://scenes/jehovas_witness.tscn" id="5_8bp7b"]
+[ext_resource type="PackedScene" uid="uid://rgbtarjjd35p" path="res://scenes/jehovas_witness.tscn" id="5_8bp7b"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="5_loysh"]
 [ext_resource type="PackedScene" uid="uid://duxu01lw6vnv4" path="res://scenes/remote.tscn" id="6_300f1"]
 [ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="7_hrsw5"]
 [ext_resource type="PackedScene" uid="uid://bf0ub71r6ynkt" path="res://scenes/wrench.tscn" id="8_bbra6"]
 [ext_resource type="PackedScene" uid="uid://c4b5bl5ia5j0f" path="res://scenes/car.tscn" id="9_eq6dh"]
 [ext_resource type="Script" path="res://scripts/progress_bar.gd" id="10_d80qs"]
+[ext_resource type="Texture2D" uid="uid://bcjvvdf057qmn" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170151.png" id="11_6q4ic"]
+[ext_resource type="Texture2D" uid="uid://b2hyybnkock5j" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170310.png" id="12_4qw1x"]
+[ext_resource type="Texture2D" uid="uid://uys8q0v8asd3" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170322.png" id="13_xtmkq"]
+[ext_resource type="Texture2D" uid="uid://cudetpqn1wr2j" path="res://Assets/Sprites/angry faces/Screenshot 2024-11-17 170330.png" id="14_l4k0b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckt8j"]
 
@@ -130,7 +134,7 @@ script = ExtResource("5_loysh")
 one_shot = true
 autostart = true
 
-[node name="Timer" type="Timer" parent="gamemanager"]
+[node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="player" parent="." node_paths=PackedStringArray("outline1", "outline2") instance=ExtResource("3_shkqn")]
@@ -175,14 +179,50 @@ position = Vector2(-615, 48)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = 974.13
+offset_top = 452.385
+offset_right = 1466.13
+offset_bottom = 941.385
+scale = Vector2(0.169598, 0.169598)
+texture = ExtResource("11_6q4ic")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = 969.13
+offset_top = 435.385
+offset_right = 1490.13
+offset_bottom = 955.385
+scale = Vector2(0.190154, 0.191458)
+texture = ExtResource("12_4qw1x")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = 961.13
+offset_top = 421.385
+offset_right = 1480.13
+offset_bottom = 941.385
+scale = Vector2(0.220482, 0.220482)
+texture = ExtResource("13_xtmkq")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = 951.795
+offset_top = 403.439
+offset_right = 1473.8
+offset_bottom = 924.439
+scale = Vector2(0.256933, 0.257891)
+texture = ExtResource("14_l4k0b")
+
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -258.0
-offset_top = 541.0
-offset_right = -146.0
-offset_bottom = 585.0
+offset_left = -265.0
+offset_top = 547.0
+offset_right = -153.0
+offset_bottom = 591.0
 grow_horizontal = 0
 scale = Vector2(2.20248, 2.20248)
 theme_override_colors/font_color = Color(0.760784, 0.768627, 0, 0.996078)
@@ -192,7 +232,6 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_ckt8j")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wg0xr")
 step = 0.001
 script = ExtResource("10_d80qs")
-metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
 
