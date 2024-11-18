@@ -26,6 +26,7 @@ func shot():
 	$Sprite2D.modulate = Color(1,0,0, 1)
 	print("shot")
 	dead = true
+	$die.playing = true
 	$AnimationPlayer.play("die")
 	
 	

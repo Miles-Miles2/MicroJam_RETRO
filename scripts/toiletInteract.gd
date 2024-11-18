@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 			get_parent().get_node("particles").emitting = false
 			parent.get_node("progressBackground").visible = false
 			parent.get_node("progressBar").visible = false
+			get_parent().get_node("water").playing = false
 	fcount += 1
 	if fcount > 10:
 		fcount = 0
@@ -40,6 +41,8 @@ func interact(plyr: Node2D, item: Node2D):
 		if item:
 			if item.is_in_group("wrench"):
 				counter += 0.3
+				if get_parent().get_node("rachet").playing == false:
+					get_parent().get_node("rachet").playing = true
 
 func beginEvent():
 	var parent = get_parent()
@@ -49,6 +52,7 @@ func beginEvent():
 	parent.get_node("progressBackground").visible = true
 	parent.get_node("progressBar").visible = true
 	print("toiletClogged")
+	get_parent().get_node("water").playing = true
 	
 func hover():
 	get_parent().get_node("hover").visible = true
