@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dh7kpecfgof2x" path="res://scenes/player.tscn" id="3_shkqn"]
 [ext_resource type="PackedScene" uid="uid://bfaa0gnwd71kl" path="res://scenes/toilet.tscn" id="4_0c5x1"]
 [ext_resource type="PackedScene" uid="uid://enryp0oxeu15" path="res://scenes/tv.tscn" id="5_2r7p3"]
-[ext_resource type="PackedScene" uid="uid://rgbtarjjd35p" path="res://scenes/jehovas_witness.tscn" id="5_8bp7b"]
+[ext_resource type="PackedScene" uid="uid://dwl784njrenpb" path="res://scenes/jehovas_witness.tscn" id="5_8bp7b"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="5_loysh"]
 [ext_resource type="PackedScene" uid="uid://duxu01lw6vnv4" path="res://scenes/remote.tscn" id="6_300f1"]
 [ext_resource type="PackedScene" uid="uid://d3ubdl3rhs7sb" path="res://scenes/camera.tscn" id="7_hrsw5"]
