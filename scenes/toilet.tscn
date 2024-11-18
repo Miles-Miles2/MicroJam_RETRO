@@ -70,7 +70,9 @@ texture = ExtResource("3_bvv70")
 [node name="water" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_krv2s")
 volume_db = -5.942
+bus = &"SFX"
 parameters/looping = true
 
 [node name="rachet" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_int3q")
+bus = &"SFX"
