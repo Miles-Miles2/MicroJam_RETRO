@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 10000.0
+const SPEED = 5000.0
 
 @export var inventory: Array = [null, null]
 @export var outline1: ColorRect
@@ -55,9 +55,11 @@ func selectItem(newIndex: int):
 		if not inventory[selectedIndex] == null:
 			inventory[selectedIndex].get_parent().visible = false
 			inventory[selectedIndex].equipped = false
+			inventory[selectedIndex].state = "backpack"
 		if not inventory[newIndex] == null:
 			inventory[newIndex].get_parent().visible = true
 			inventory[newIndex].equipped = true
+			inventory[newIndex].state = "equipped"
 	selectedIndex = newIndex
 
 
@@ -77,6 +79,7 @@ func pickUpItem(item: Node2D):
 		dropItem()
 	item.get_parent().reparent($Backpack)
 	item.equipped = true
+	item.state = "equipped"
 	item.visible = true
 	item.get_parent().position = Vector2(0,0)
 	inventory[selectedIndex] = item
